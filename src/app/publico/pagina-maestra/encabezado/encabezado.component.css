@@ -1,0 +1,21 @@
+nav {
+  background-color: #0A7EA1;
+
+}
+
+.brand-logo {
+  color: white;
+  display: flex;
+  align-items: center;
+
+}
+
+#nav-mobile li a {
+  color: white;
+
+}
+
+
+.logo-text {
+  margin-left: 40px;  
+}
