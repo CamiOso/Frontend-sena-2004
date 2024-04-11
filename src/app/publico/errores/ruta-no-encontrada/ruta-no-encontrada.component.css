@@ -1,3 +1,13 @@
-.error-ruta-no-encontrada{
-  color:red;
+.not-found-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.not-found-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.not-found-container p {
+  font-size: 18px;
 }
