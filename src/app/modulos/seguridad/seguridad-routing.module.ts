@@ -5,8 +5,9 @@ import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
+import { IdentificacionTwofaComponent } from './identificacion-twofa/identificacion-twofa.component';
 
-const routes: Routes = [{
+const routes: Routes= [{
   path:"identificar-usuario",
   component: IdentificacionUsuarioComponent
 },{
@@ -25,6 +26,11 @@ path:"registro-publico",
 component:RegistroPublicoUsuariosComponent
 
 }
+,{
+  path:"2fa",
+  component:IdentificacionTwofaComponent
+
+  }
 
 
 ];
