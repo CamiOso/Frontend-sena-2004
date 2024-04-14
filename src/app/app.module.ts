@@ -9,7 +9,11 @@ import { MenuLateralComponent } from './publico/pagina-maestra/menu-lateral/menu
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
+import { HttpClientModule } from '@angular/common/http';
+import { IntroduccionGeologiaComponent } from './publico/informacionadicional/introduccion-geologia/introduccion-geologia.component';
+import { ProcesosGeologicosComponent } from './publico/informacionadicional/procesos-geologicos/procesos-geologicos.component';
  
+
 
 
 @NgModule({
@@ -21,13 +25,16 @@ import { InicioComponent } from './publico/inicio/inicio.component';
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
     InicioComponent,
+    IntroduccionGeologiaComponent,
+    ProcesosGeologicosComponent,
+
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    HttpClientModule
   ],
   providers: [
 

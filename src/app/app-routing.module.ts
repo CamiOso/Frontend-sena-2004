@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
+import { IntroduccionGeologiaComponent } from './publico/informacionadicional/introduccion-geologia/introduccion-geologia.component';
+import { ProcesosGeologicosComponent } from './publico/informacionadicional/procesos-geologicos/procesos-geologicos.component';
 
 
 
@@ -85,6 +87,10 @@ loadChildren:()=>import("./modulos/litologia/litologia.module").then(m=>m.Litolo
 
 },
 
+
+{path: 'introduccion', component: IntroduccionGeologiaComponent },
+{ path: 'procesos', component: ProcesosGeologicosComponent},
+ 
 {
   path:"**",
   component:RutaNoEncontradaComponent

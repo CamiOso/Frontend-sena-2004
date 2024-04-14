@@ -1,0 +1,13 @@
+.procesos-geologicos {
+  background-color: #f8f8f8; /* Color de fondo más suave */
+  padding: 20px;
+}
+
+.procesos-geologicos h3 {
+  color: #333;
+}
+
+.procesos-geologicos p {
+  color: #666;
+  margin-bottom: 10px; /* Espacio entre párrafos */
+}
