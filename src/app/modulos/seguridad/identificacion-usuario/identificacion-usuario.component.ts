@@ -45,32 +45,37 @@ ConstruirFormulario(){
  */
 
 
+IdentificarUsuario() {
 
-IdentificarUsuario(){
+  console.log("Iniciando IdentificarUsuario()");
+  if (this.fGroup.invalid) {
+    console.log("Formulario inválido");
+    alert("Datos incompletos");
+  } else {
+    let usuario = this.obtenerFormGroup['usuario'].value;
+    let clave = this.obtenerFormGroup['clave'].value;
+    let claveCifrada = MD5(clave).toString();
+    this.servicioSeguridad.IdentificarUsuario(usuario, claveCifrada).subscribe({
+      next: (datos: UsuarioModel) => {
+   
 
-  if(this.fGroup.invalid){
-    alert("Datos incompletos....");
-  }else{
-    let usuario=this.obtenerFormGroup['usuario'].value;
-    let clave=this.obtenerFormGroup['clave'].value;
-    let claveCifrada=MD5(clave).toString();
+          if (this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)) {
+            console.log("Datos del usuario almacenados correctamente, navegando a /seguridad/2fa");
+            this.router.navigate(["/seguridad/2fa"]);
 
-     this.servicioSeguridad.IdentificarUsuario(usuario,claveCifrada).subscribe({
-      next:(datos:UsuarioModel)=>{
-        console.log(datos);
-        if(this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)){
-
-          this.router.navigate(["/seguridad/2fa"]);
-        }
+          }
 
 
-      },error:(err)=>{
+        console.log();
+        this.router.navigate(["/seguridad/2fa"]);
+      },
+      error: (err) => {
         console.log(err);
       }
-     });
+    });
   }
-
 }
+
 
 get obtenerFormGroup(){
   return this.fGroup.controls;
