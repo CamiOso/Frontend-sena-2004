@@ -57,17 +57,23 @@ IdentificarUsuario() {
     let claveCifrada = MD5(clave).toString();
     this.servicioSeguridad.IdentificarUsuario(usuario, claveCifrada).subscribe({
       next: (datos: UsuarioModel) => {
-   
+
+        if(datos._id==undefined || datos._id==null){
+
+          alert("Credenciales incorrectas o Falta la validación del correo electrónico.");
+          return;
+
+        }
+    else {
 
           if (this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)) {
             console.log("Datos del usuario almacenados correctamente, navegando a /seguridad/2fa");
             this.router.navigate(["/seguridad/2fa"]);
 
-          }
+          }}
 
 
-        console.log();
-        this.router.navigate(["/seguridad/2fa"]);
+
       },
       error: (err) => {
         console.log(err);

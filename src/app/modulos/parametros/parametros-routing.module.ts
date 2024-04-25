@@ -40,6 +40,10 @@ import { CrearVetaComponent } from './Veta/crear-veta/crear-veta.component';
 import { EditarVetaComponent } from './Veta/editar-veta/editar-veta.component';
 import { EliminarVetaComponent } from './Veta/eliminar-veta/eliminar-veta.component';
 import { ListarVetaComponent } from './Veta/listar-veta/listar-veta.component';
+import { CrearLaboratorioComponent } from './Laboratorio/crear-laboratorio/crear-laboratorio.component';
+import { EditarLaboratorioComponent } from './Laboratorio/editar-laboratorio/editar-laboratorio.component';
+import { EliminarLaboratorioComponent } from './Laboratorio/eliminar-laboratorio/eliminar-laboratorio.component';
+import { ListarLaboratorioComponent } from './Laboratorio/listar-laboratorio/listar-laboratorio.component';
 
 const routes: Routes = [
 
@@ -216,6 +220,23 @@ const routes: Routes = [
               {
                 path:"veta-listar",
                 component: ListarVetaComponent},
+
+
+
+                {
+                  path:"laboratorio-agregar",
+                  component: CrearLaboratorioComponent
+                },{
+                  path:"editar-laboratorio/:id",
+                  component:EditarLaboratorioComponent
+                },
+                {
+                  path:"eliminar-laboratorio/:id",
+                  component:EliminarLaboratorioComponent
+                },
+                {
+                  path:"laboratorio-listar",
+                  component: ListarLaboratorioComponent},
 
 
 

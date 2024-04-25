@@ -43,6 +43,10 @@ import { CrearTipoAnalisisComponent } from './TipoAnalisis/crear-tipo-analisis/c
 import { EditarTipoAnalisisComponent } from './TipoAnalisis/editar-tipo-analisis/editar-tipo-analisis.component';
 import { EliminarTipoAnalisisComponent } from './TipoAnalisis/eliminar-tipo-analisis/eliminar-tipo-analisis.component';
 import { ListarTipoAnalisisComponent } from './TipoAnalisis/listar-tipo-analisis/listar-tipo-analisis.component';
+import { ListarLaboratorioComponent } from './Laboratorio/listar-laboratorio/listar-laboratorio.component';
+import { CrearLaboratorioComponent } from './Laboratorio/crear-laboratorio/crear-laboratorio.component';
+import { EditarLaboratorioComponent } from './Laboratorio/editar-laboratorio/editar-laboratorio.component';
+import { EliminarLaboratorioComponent } from './Laboratorio/eliminar-laboratorio/eliminar-laboratorio.component';
 
 
 @NgModule({
@@ -87,7 +91,11 @@ import { ListarTipoAnalisisComponent } from './TipoAnalisis/listar-tipo-analisis
     CrearTipoAnalisisComponent,
     EditarTipoAnalisisComponent,
     EliminarTipoAnalisisComponent,
-    ListarTipoAnalisisComponent
+    ListarTipoAnalisisComponent,
+    ListarLaboratorioComponent,
+    CrearLaboratorioComponent,
+    EditarLaboratorioComponent,
+    EliminarLaboratorioComponent
   ],
   imports: [
     CommonModule,

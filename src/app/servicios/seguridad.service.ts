@@ -4,6 +4,10 @@ import { UsuarioModel } from '../modelos/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { ConfiguracionRutasBackend } from '../config/configuracion.rutas.backend';
 import { UsuarioValidadoModel } from '../modelos/usuario.validado.model';
+import { ValidarHashUsuarioPublicoComponent } from '../modulos/seguridad/validar-hash-usuario-publico/validar-hash-usuario-publico.component';
+import { PermisoModel } from '../modelos/permiso.model';
+import { ItemMenuModel } from '../modelos/item.menu.model';
+import { ConfiguracionMenuLateral } from '../config/configuracion.menu.lateral';
 
 @Injectable({
   providedIn: 'root'
@@ -152,5 +156,31 @@ RegistrarUsuarioPublico(datos:any):Observable<UsuarioModel>{
 
 }
 
+
+ValidarHashUsuarioPublico(hash:string):Observable<boolean>{
+
+  return this.http.post<boolean>(`${this.urlBase}validar-hash-usuario`,{
+    codigoHash: hash
+  });
+
+}
+
+
+ConstruirMenuLateral(permisos: PermisoModel[]) {
+  let menu: ItemMenuModel[] = [];
+
+  permisos.forEach((permiso) => {
+    let datosRuta = ConfiguracionMenuLateral.listaMenus.filter(x => x.id == permiso.menuId);
+    if (datosRuta.length > 0) {
+      let item = new ItemMenuModel();
+      item.idMenu = permiso.menuId;
+      item.ruta = datosRuta[0].ruta;
+      item.icono = datosRuta[0].icono;
+      item.texto = datosRuta[0].texto;
+      menu.push(item);
+    }
+  });
+  //this.AlmacenarItemsMenuLateral(menu);
+}
 
 }
