@@ -1,4 +1,4 @@
-# Ventas20231
+# APP mineria y GEOLOGIA SENA
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
