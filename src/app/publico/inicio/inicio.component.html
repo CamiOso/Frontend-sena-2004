@@ -1,2 +1,20 @@
 
 <h1 class="titulo">Bienvenidos a ArisMining Colombia</h1>
+
+
+<div class="row">
+  <div  *ngFor="let r of listaRegistros"  class="col s3 m7">
+    <div   class="card">
+      <div class="card-image">
+        <img src="{{r.foto}}">
+        <span class="card-title">{{r.minadId}}</span>
+      </div>
+      <div class="card-content">
+        <p>{{r.litologiaId}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
