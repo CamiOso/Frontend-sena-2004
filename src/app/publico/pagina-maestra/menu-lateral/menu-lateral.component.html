@@ -11,8 +11,11 @@
       <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
     </div>
   </li>
-  <li>
-    <a href="#!">  <i class="material-icons">Cloud</i> Link With Icon</a>
+  
+  <li *ngFor="let m of listaMenus">
+    <a routerLink="{{m.ruta}}">  {{m.texto}}</a>
+
+
   </li>
 
 </ul>

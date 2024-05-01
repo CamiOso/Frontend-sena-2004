@@ -144,7 +144,7 @@ RemoverDatosUsuarioValidado(){
     localStorage.removeItem("datos-sesion");
 
  }
-
+localStorage.removeItem("menu-lateral");
  this.ActualizarComportamientoUsuario(new UsuarioValidadoModel());
 
 }
@@ -180,7 +180,35 @@ ConstruirMenuLateral(permisos: PermisoModel[]) {
       menu.push(item);
     }
   });
-  //this.AlmacenarItemsMenuLateral(menu);
+  this.AlmacenarItemsMenuLateral(menu);
 }
+
+
+/**
+ *
+ * @param itemsMenu items del menu a guardar en ls
+ */
+
+AlmacenarItemsMenuLateral(itemsMenu: ItemMenuModel[]) {
+  let menuStr=JSON.stringify(itemsMenu);
+  localStorage.setItem("menu-lateral",menuStr);
+}
+
+/**
+ *
+ *  @returns items del menu
+ */
+
+
+
+obtenerItemsMenuLateral():ItemMenuModel[] {
+  let menu:ItemMenuModel[]=[];
+  let menuStr=localStorage.getItem("menu-lateral");
+  if(menuStr){
+   menu=JSON.parse(menuStr);
+  }
+  return menu;
+}
+
 
 }
